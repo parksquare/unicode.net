@@ -1,4 +1,5 @@
-# This is a fork of [neosmart/unicode.net](https://github.com/neosmart/unicode.net) from [mqudsi](https://github.com/mqudsi)
+## This is a fork of [neosmart/unicode.net](https://github.com/neosmart/unicode.net)
+## Available from Nuget: [UnicodeEmoji.Net](https://www.nuget.org/packages/UnicodeEmoji.net) 
 
 It adds more properties to the `SingleEmoji` class (click [here](https://github.com/UWPX/unicode.net#class-singleemoji) for their documentation) and lists for all emoji groups.
 
