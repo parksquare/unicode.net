@@ -198,5 +198,20 @@ namespace NeoSmart.Unicode
 
             return count > 0 && count <= maxSymbolCount;
         }
+
+        public static bool IsKnownEmoji(UnicodeSequence unicodeSequence)
+        {
+            return All.Any(x => x.Sequence == unicodeSequence);
+        }
+
+        public static bool IsKnownEmoji(Codepoint codepoint)
+        {
+            return IsKnownEmoji(new List<Codepoint> {codepoint});
+        }
+
+        public static bool IsKnownEmoji(List<Codepoint> codepoints)
+        {
+            return IsKnownEmoji(new UnicodeSequence(codepoints));
+        }
     }
 }

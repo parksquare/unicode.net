@@ -6,7 +6,7 @@
     <RootNamespace>NeoSmart.Unicode</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>UnicodeEmoji.net</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>NeoSmart Technologies, Mahmoud Al-Qudsi, Jon Meesam</Authors>
     <Company>NeoSmart Technologies</Company>
     <Description>A Unicode and emoji text-processing library for .NET, supporting UTF-8, UTF-16, and UTF-32 on .NET Standard</Description>
@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/neosmart/unicode.net</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>unicode, text processing, encoding, utf8, utf-8, utf-16, utf16, utf-32, utf32, emoji. emojis</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>Added some IsKnownEmoji methods</PackageReleaseNotes>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
