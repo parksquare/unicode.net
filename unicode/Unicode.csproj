@@ -22,6 +22,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>NeoSmart.Unicode.snk</AssemblyOriginatorKeyFile>
+	<ProjectGuid>{80c25958-bf54-4c43-b5b4-2d470e272cc0}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\LICENSE">
