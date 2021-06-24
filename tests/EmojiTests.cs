@@ -44,8 +44,8 @@ namespace UnicodeTests
         [TestMethod]
         public void TestEmojiGeneration()
         {
-            Assert.AreEqual("😀", Emoji.GrinningFace.ToString(), $"Emoji comparison failed. Expected 😀, but found {Emoji.GrinningFace.ToString()}");
-            Assert.AreEqual("👩‍🔧", Emoji.Combine(Emoji.Woman, Emoji.Wrench), $"Emoji comparison failed. Expected 👩‍🔧, but found {Emoji.Combine(Emoji.Woman, Emoji.Wrench)}");
+            Assert.AreEqual("😀", Emoji.GrinningFace_E1_0.ToString(), $"Emoji comparison failed. Expected 😀, but found {Emoji.GrinningFace_E1_0.ToString()}");
+            Assert.AreEqual("👩‍🔧", Emoji.Combine(Emoji.Woman_E0_6, Emoji.Wrench_E0_6), $"Emoji comparison failed. Expected 👩‍🔧, but found {Emoji.Combine(Emoji.Woman_E0_6, Emoji.Wrench_E0_6)}");
         }
 
         [TestMethod]

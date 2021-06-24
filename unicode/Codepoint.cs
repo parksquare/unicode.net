@@ -1,4 +1,10 @@
-﻿using System;
+﻿// This class is a part of the fork from neosmarts unicode.net (https://github.com/neosmart/unicode.net)
+// Source: https://github.com/UWPX/unicode.net
+// Original license:
+// MIT License:
+// https://github.com/UWPX/unicode.net/blob/master/LICENSE
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -6,7 +12,7 @@ using System.Text;
 
 namespace NeoSmart.Unicode
 {
-    public struct Codepoint : IComparable<Codepoint>, IComparable<UInt32>, IEquatable<Codepoint>,
+    public struct Codepoint: IComparable<Codepoint>, IComparable<UInt32>, IEquatable<Codepoint>,
         IEquatable<string>, IComparable<string>, IEquatable<char>
     {
         public readonly UInt32 Value;
@@ -26,7 +32,7 @@ namespace NeoSmart.Unicode
         /// <param name="hexValue"></param>
         public Codepoint(string hexValue)
         {
-            if ((hexValue.StartsWith("0x") || hexValue.StartsWith("U+") || hexValue.StartsWith("u+")))
+            if (hexValue.StartsWith("0x") || hexValue.StartsWith("U+") || hexValue.StartsWith("u+"))
             {
                 hexValue = hexValue.Substring(2);
             }
@@ -36,7 +42,10 @@ namespace NeoSmart.Unicode
             }
         }
 
-        public UInt32 AsUtf32() => Value;
+        public UInt32 AsUtf32()
+        {
+            return Value;
+        }
 
         /// <summary>
         /// Returns an iterator that will enumerate over the big endian bytes in the UTF32 encoding of this codepoint.
@@ -44,14 +53,14 @@ namespace NeoSmart.Unicode
         public IEnumerable<byte> AsUtf32Bytes()
         {
             //from highest to lowest
-            var utf32 = AsUtf32();
-            var b1 = (byte)(utf32 >> 24);
+            uint utf32 = AsUtf32();
+            byte b1 = (byte)(utf32 >> 24);
             yield return b1;
-            var b2 = (byte)((utf32 & 0x00FFFFFF) >> 16);
+            byte b2 = (byte)((utf32 & 0x00FFFFFF) >> 16);
             yield return b2;
-            var b3 = (byte)(((UInt16)utf32) >> 8);
+            byte b3 = (byte)(((UInt16)utf32) >> 8);
             yield return b3;
-            var b4 = (byte)utf32;
+            byte b4 = (byte)utf32;
             yield return b4;
         }
 
@@ -86,12 +95,12 @@ namespace NeoSmart.Unicode
         /// </summary>
         public IEnumerable<byte> AsUtf16Bytes()
         {
-            var utf16 = AsUtf16();
-            foreach (var u16 in utf16)
+            IEnumerable<ushort> utf16 = AsUtf16();
+            foreach (ushort u16 in utf16)
             {
-                var high = (byte)(u16 >> 8);
+                byte high = (byte)(u16 >> 8);
                 yield return high;
-                var low = (byte)u16;
+                byte low = (byte)u16;
                 yield return low;
             }
         }
@@ -237,7 +246,7 @@ namespace NeoSmart.Unicode
 
         public bool Equals(char other)
         {
-            var s = AsString();
+            string s = AsString();
             return s.Count() == 1 && s[0] == other;
         }
 

@@ -1,4 +1,10 @@
-﻿using System;
+﻿// This class is a part of the fork from neosmarts unicode.net (https://github.com/neosmart/unicode.net)
+// Source: https://github.com/UWPX/unicode.net
+// Original license:
+// MIT License:
+// https://github.com/UWPX/unicode.net/blob/master/LICENSE
+
+using System;
 using System.Collections.Generic;
 
 namespace NeoSmart.Unicode
@@ -28,7 +34,7 @@ namespace NeoSmart.Unicode
         //either a single hex codepoint or two separated by a hyphen
         public Range(string range)
         {
-            var values = range.Split(new[] { "-", "–", "—", ".." }, StringSplitOptions.RemoveEmptyEntries); //these are all different hyphens used on Wikipedia and in the UTR
+            string[] values = range.Split(new[] { "-", "–", "—", ".." }, StringSplitOptions.RemoveEmptyEntries); //these are all different hyphens used on Wikipedia and in the UTR
             Begin = UInt32.Parse(values[0], System.Globalization.NumberStyles.HexNumber);
 
             if (values.Length == 1)
@@ -60,9 +66,9 @@ namespace NeoSmart.Unicode
         {
             get
             {
-                for (var i = 0; Begin + i <= End; ++i)
+                for (int i = 0; Begin + i <= End; ++i)
                 {
-                    foreach (var utf16 in new Codepoint(Begin + i).AsUtf16())
+                    foreach (ushort utf16 in new Codepoint(Begin + i).AsUtf16())
                     {
                         yield return utf16;
                     }
@@ -74,9 +80,9 @@ namespace NeoSmart.Unicode
         {
             get
             {
-                for (var i = 0; Begin + i <= End; ++i)
+                for (int i = 0; Begin + i <= End; ++i)
                 {
-                    foreach (var utf8 in new Codepoint(Begin + i).AsUtf8())
+                    foreach (byte utf8 in new Codepoint(Begin + i).AsUtf8())
                     {
                         yield return utf8;
                     }

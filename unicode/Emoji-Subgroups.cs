@@ -1,6 +1,6 @@
-namespace NeoSmart.Unicode
+﻿namespace NeoSmart.Unicode
 {
-    // This file is machine-generated based on the official Unicode Consortium publication (https://unicode.org/Public/emoji/12.0/emoji-test.txt).
+    // This file is machine-generated based on the official Unicode Consortium publication (https://unicode.org/Public/emoji/13.0/emoji-test.txt).
     // See https://github.com/UWPX/Emoji-List-Parser for the generator.
     public static partial class Emoji
     {
@@ -97,6 +97,9 @@ namespace NeoSmart.Unicode
             public static readonly string ZODIAC = "zodiac";
             public static readonly string AV_SYMBOL = "av-symbol";
             public static readonly string GENDER = "gender";
+            public static readonly string MATH = "math";
+            public static readonly string PUNCTUATION = "punctuation";
+            public static readonly string CURRENCY = "currency";
             public static readonly string OTHER_SYMBOL = "other-symbol";
             public static readonly string KEYCAP = "keycap";
             public static readonly string ALPHANUM = "alphanum";
